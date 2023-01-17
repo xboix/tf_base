@@ -1,0 +1,20 @@
+{
+  "_comment": "===== MODEL CONFIGURATION =====",
+  "model_name": "0",
+  "restart": false,
+  "skip": false,
+
+  "data_set": 0,
+  "reshape": false,
+  "backbone": "CNN",
+
+  "_comment": "===== TRAINING CONFIGURATION =====",
+  "random_seed": 4557077,
+
+  "max_num_training_steps": 3000,
+  "num_output_steps": 500,
+  "training_size": 50000,
+  "training_batch_size": 256,
+  "initial_learning_rate": 1e-3,
+  "batch_decrease_learning_rate": 5
+}
