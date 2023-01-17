@@ -32,7 +32,7 @@ def test(config):
                                     standarized=config["standarize"], multiplier=config["standarize_multiplier"],
                                     reshape=config['reshape'], seed=seed)
 
-    num_features = data.train.images.shape[1]
+    num_features = data.test.num_features
     model = get_network(backbone_name, config, num_features)
     model.load_all(tf.train.latest_checkpoint(config['model_dir'] + '/checkpoints/'), load_optimizer=False)
 
