@@ -34,7 +34,7 @@ def train(config):
     data = input_data.load_data_set(results_dir=config['results_dir'], data_set=config['data_set'],
                                     standarized=config["standarize"], multiplier=config["standarize_multiplier"],
                                     reshape=config['reshape'], seed=seed)
-    num_features = data.train.images.shape[1]
+    num_features = data.train.num_features
 
     model = get_network(backbone_name, config, num_features)
 

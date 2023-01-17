@@ -35,8 +35,8 @@ class _DataSet(object):
         # to [num examples, rows*columns] (assuming depth == 1)
         seed1, seed2 = random_seed.get_seed(seed)
         numpy.random.seed(seed)
+        labels = labels.reshape(labels.shape[0])
         if reshape:
-            labels = labels.reshape(labels.shape[0])
             images = images.reshape(images.shape[0], num_features)
 
         #if dtype == dtypes.float32:
@@ -49,6 +49,7 @@ class _DataSet(object):
         self._labels = labels
         self._epochs_completed = 0
         self._index_in_epoch = 0
+        self.num_features = num_features
 
     @property
     def images(self):
